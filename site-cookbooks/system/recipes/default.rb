@@ -18,3 +18,8 @@ bash "timezone" do
   code "sudo hwclock --systohc --utc"
   creates "/etc/localtime"
 end
+bash "" do
+  only_if { File.readlines("/etc/locale.gen").grep(/#en_US.UTF-8 UTF-8/).any? }
+  code "sudo sed -E -i -e 's/#((en_US|ja_JP).UTF-8 UTF-8)/\\1/' /etc/locale.gen && sudo locale-gen"
+  # code "sudo sed -E -i -e 's/#(ja_JP.UTF-8 UTF-8)/\\1/' /etc/locale.gen"
+end
