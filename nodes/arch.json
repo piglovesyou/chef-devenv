@@ -1,1 +1,1 @@
-{"run_list":[    "recipe[system]"  , "recipe[initialpackages]"  , "recipe[users]"  , "recipe[x]"  , "recipe[desktopapps]"]}
+{    "authorization": {      "sudo": {          "groups": ["wheel"]        , "users": ["pig", "vagrant"]        , "passwordless": true      }    }  , "run_list":[        "recipe[system]"      , "recipe[initialpackages]"      , "recipe[users]"      , "recipe[sudo]"      , "recipe[x]"      , "recipe[desktopapps]"    ]}

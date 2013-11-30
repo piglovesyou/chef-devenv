@@ -16,4 +16,5 @@ end
 bash "timezone" do
   code "sudo ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime"
   code "sudo hwclock --systohc --utc"
+  creates "/etc/localtime"
 end
