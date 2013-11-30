@@ -1,5 +1,5 @@
-vconsole Cookbook
-=================
+users Cookbook
+==============
 TODO: Enter the cookbook description here.
 
 e.g.
@@ -11,14 +11,14 @@ TODO: List your cookbook requirements. Be sure to include any requirements this 
 
 e.g.
 #### packages
-- `toaster` - vconsole needs toaster to brown your bagel.
+- `toaster` - users needs toaster to brown your bagel.
 
 Attributes
 ----------
 TODO: List you cookbook attributes here.
 
 e.g.
-#### vconsole::default
+#### users::default
 <table>
   <tr>
     <th>Key</th>
@@ -27,7 +27,7 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['vconsole']['bacon']</tt></td>
+    <td><tt>['users']['bacon']</tt></td>
     <td>Boolean</td>
     <td>whether to include bacon</td>
     <td><tt>true</tt></td>
@@ -36,17 +36,17 @@ e.g.
 
 Usage
 -----
-#### vconsole::default
+#### users::default
 TODO: Write usage instructions for each cookbook.
 
 e.g.
-Just include `vconsole` in your node's `run_list`:
+Just include `users` in your node's `run_list`:
 
 ```json
 {
   "name":"my_node",
   "run_list": [
-    "recipe[vconsole]"
+    "recipe[users]"
   ]
 }
 ```

@@ -1,1 +1,1 @@
-{"run_list":[  "recipe[vconsole]"]}
+{"run_list":[    "recipe[system]"  , "recipe[initialpackages]"  , "recipe[users]"  , "recipe[x]"  , "recipe[desktopapps]"]}
