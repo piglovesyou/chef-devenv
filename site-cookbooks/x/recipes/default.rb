@@ -12,3 +12,10 @@
     action :install
   end
 end
+cookbook_file "/etc/slim.conf" do
+  mode 00644
+end
+bash "slim.service" do
+  code "sudo systemctl enable slim.service; sudo systemctl start slim.service"
+  creates "/etc/systemd/system/display-manager.service"
+end

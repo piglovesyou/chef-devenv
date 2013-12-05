@@ -10,9 +10,9 @@
 user "pig" do
   home "/home/pig"
   shell "/bin/bash"
-  password nil
   supports :manage_home => true
 end
+
 group "wheel" do
   action :modify
   members ['pig']

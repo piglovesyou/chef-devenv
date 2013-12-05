@@ -8,7 +8,5 @@
 #
 
 %w{vim tmux nodejs python2 git subversion}.each do |p|
-  package p do
-    action :install
-  end
+  package p
 end

@@ -18,8 +18,15 @@ bash "timezone" do
   code "sudo hwclock --systohc --utc"
   creates "/etc/localtime"
 end
-bash "" do
+bash "edit locale.gen" do
   only_if { File.readlines("/etc/locale.gen").grep(/#en_US.UTF-8 UTF-8/).any? }
   code "sudo sed -E -i -e 's/#((en_US|ja_JP).UTF-8 UTF-8)/\\1/' /etc/locale.gen && sudo locale-gen"
   # code "sudo sed -E -i -e 's/#(ja_JP.UTF-8 UTF-8)/\\1/' /etc/locale.gen"
+end
+%w{vim tmux nodejs python2 git subversion}.each do |p|
+  package p
+end
+bash "install dropbox-cli" do
+  code "yaourt -S --noconfirm dropbox-cli"
+  creates "/usr/bin/dropbox"
 end
