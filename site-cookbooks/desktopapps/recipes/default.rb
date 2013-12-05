@@ -27,3 +27,7 @@ bash "slim.service" do
   code "sudo systemctl enable slim.service; sudo systemctl start slim.service"
   creates "/etc/systemd/system/display-manager.service"
 end
+bash "yaourt install dropbox-cli" do
+  code "yaourt -S --noconfirm dropbox-cli"
+  creates "/usr/bin/dropbox"
+end

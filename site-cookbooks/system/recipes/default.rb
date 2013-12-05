@@ -26,7 +26,6 @@ end
 %w{vim tmux nodejs python2 git subversion}.each do |p|
   package p
 end
-bash "install dropbox-cli" do
-  code "yaourt -S --noconfirm dropbox-cli"
-  creates "/usr/bin/dropbox"
+link "/usr/bin/vim" do
+  to "/usr/local/bin/vi"
 end
