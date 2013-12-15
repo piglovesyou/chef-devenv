@@ -7,16 +7,14 @@
 # All rights reserved - Do Not Redistribute
 #
 
-# chromium
-# %w{firefox gnome-terminal dropbox}.each do |p|
-#   package p
-# end
-
+# Note: Install vim after gnome-terminal to get gvim.
 %w{
   xorg-server xorg-xinit
   slim archlinux-themes-slim slim-themes awesome
   xorg-xmodmap xorg-xset xscreensaver
   scim scim-uim scim-anthy
+  gnome-terminal vim chromium firefox
+  rdesktop 
 }.each do |p|
   package p 
 end
@@ -27,7 +25,21 @@ bash "slim.service" do
   code "sudo systemctl enable slim.service; sudo systemctl start slim.service"
   creates "/etc/systemd/system/display-manager.service"
 end
+link "/usr/local/bin/vi" do
+  to "/usr/bin/vim"
+end
+
+# AUR
+# TODO: Refactor this
 bash "yaourt install dropbox-cli" do
   code "yaourt -S --noconfirm dropbox-cli"
   creates "/usr/bin/dropbox"
 end
+bash "yaourt install libreoffice" do
+  code "yaourt -S --noconfirm libreoffice-calc libreoffice-impress libreoffice-ja"
+  creates "/usr/bin/libreoffice"
+end
+# bash "yaourt install ttf" do
+#   code "yaourt -S --noconfirm ttf-sazanami ttf-ricty"
+#   creates "/usr/bin/libreoffice"
+# end

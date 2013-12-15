@@ -23,9 +23,10 @@ bash "edit locale.gen" do
   code "sudo sed -E -i -e 's/#((en_US|ja_JP).UTF-8 UTF-8)/\\1/' /etc/locale.gen && sudo locale-gen"
   # code "sudo sed -E -i -e 's/#(ja_JP.UTF-8 UTF-8)/\\1/' /etc/locale.gen"
 end
-%w{vim tmux nodejs python2 git subversion}.each do |p|
+%w{
+  wget zip
+  tmux nodejs python2 git tig subversion smbclient
+  python-pip
+}.each do |p|
   package p
-end
-link "/usr/bin/vim" do
-  to "/usr/local/bin/vi"
 end
