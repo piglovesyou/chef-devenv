@@ -1,1 +1,1 @@
-{    "authorization": {      "sudo": {          "groups": ["wheel"]        , "users": ["pig", "vagrant"]        , "passwordless": true      }    }  , "run_list":[        "system"      , "users"      , "sudo"      , "desktopapps"    ]}
+{    "run_list":[        "system"      , "users"      , "sudo"      , "desktopapps"    ]}
