@@ -12,7 +12,9 @@
   xorg-server xorg-xinit
   slim archlinux-themes-slim slim-themes awesome
   xorg-xmodmap xorg-xset xscreensaver
-  scim scim-uim scim-anthy
+  scim scim-uim scim-anthy uim-mozc 
+  ttf-dejavu ttf-inconsolata ttf-migu
+  ttf-ricty ttf-sazanami
   gnome-terminal vim chromium firefox
   rdesktop 
 }.each do |p|
