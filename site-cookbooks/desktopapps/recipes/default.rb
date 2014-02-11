@@ -7,39 +7,39 @@
 # All rights reserved - Do Not Redistribute
 #
 
-# Note: Install vim after gnome-terminal to get gvim.
+cookbook_file "/home/" + ENV['SUDO_USER'] + "/.xinitrc" do
+  mode 700
+end
+
+# Sometime I need 'pacman -Syyu' before installing those.
 %w{
+  xf86-video-intel
   xorg-server xorg-xinit
-  slim archlinux-themes-slim slim-themes awesome
-  xorg-xmodmap xorg-xset xscreensaver
-  scim scim-uim scim-anthy
-  gnome-terminal vim chromium firefox
-  rdesktop 
+  slim archlinux-themes-slim awesome
+  xorg-xmodmap xorg-xset xscreensaver xterm urxvt
+  uim scim scim-uim scim-anthy
+  ttf-dejavu ttf-inconsolata ttf-sazanami
+  vim chromium rdesktop 
 }.each do |p|
   package p 
 end
+# I don't know why I cannot 'package "firefox"' ?
+
 cookbook_file "/etc/slim.conf" do
   mode 00644
 end
+
 bash "slim.service" do
   code "sudo systemctl enable slim.service; sudo systemctl start slim.service"
   creates "/etc/systemd/system/display-manager.service"
 end
+
 link "/usr/local/bin/vi" do
   to "/usr/bin/vim"
 end
 
 # AUR
-# TODO: Refactor this
-bash "yaourt install dropbox-cli" do
-  code "yaourt -S --noconfirm dropbox-cli"
-  creates "/usr/bin/dropbox"
-end
-bash "yaourt install libreoffice" do
-  code "yaourt -S --noconfirm libreoffice-calc libreoffice-impress libreoffice-ja"
-  creates "/usr/bin/libreoffice"
-end
-# bash "yaourt install ttf" do
-#   code "yaourt -S --noconfirm ttf-sazanami ttf-ricty"
-#   creates "/usr/bin/libreoffice"
-# end
+# uim-mozc
+# ttf-migu ttf-ricty
+# dropbox-cli
+# libreoffice

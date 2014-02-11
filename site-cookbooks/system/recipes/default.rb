@@ -24,7 +24,7 @@ bash "edit locale.gen" do
   # code "sudo sed -E -i -e 's/#(ja_JP.UTF-8 UTF-8)/\\1/' /etc/locale.gen"
 end
 %w{
-  wget zip
+  wget zip unzip
   tmux nodejs python2 git tig subversion smbclient
   python-pip
 }.each do |p|

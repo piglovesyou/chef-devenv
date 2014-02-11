@@ -1,1 +1,1 @@
-{    "run_list":[        "system"      , "users"      , "sudo"      , "desktopapps"    ]}
+{    "run_list":[        "system",        "desktopapps"    ]}
