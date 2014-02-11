@@ -16,7 +16,7 @@ end
   xf86-video-intel
   xorg-server xorg-xinit
   slim archlinux-themes-slim awesome
-  xorg-xmodmap xorg-xset xscreensaver xterm urxvt
+  xorg-xmodmap xorg-xset xscreensaver xterm rxvt-unicode
   uim scim scim-uim scim-anthy
   ttf-dejavu ttf-inconsolata ttf-sazanami
   vim chromium rdesktop 
