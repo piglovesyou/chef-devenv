@@ -38,8 +38,10 @@ link "/usr/local/bin/vi" do
   to "/usr/bin/vim"
 end
 
-# AUR
+# AUR:
 # uim-mozc
-# ttf-migu ttf-ricty
-# dropbox-cli
-# libreoffice
+# ttf-migu
+# ttf-ricty
+
+# Not now:
+# dropbox-cli libreoffice
