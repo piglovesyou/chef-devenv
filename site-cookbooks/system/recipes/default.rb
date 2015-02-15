@@ -26,8 +26,7 @@ end
 %w{
   abs
   wget zip unzip
-  tmux nodejs python2 git tig subversion smbclient
-  python-pip
+  tmux nodejs python2 git tig
 }.each do |p|
   package p
 end

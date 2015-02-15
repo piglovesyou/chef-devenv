@@ -13,13 +13,12 @@ end
 
 # Sometime I need 'pacman -Syyu' before installing those.
 %w{
-  xf86-video-intel
   xorg-server xorg-xinit
   slim archlinux-themes-slim awesome
-  xorg-xmodmap xorg-xset xscreensaver xterm rxvt-unicode
-  uim scim scim-uim scim-anthy
+  xorg-xmodmap xorg-xset xscreensaver xterm xclip
+  rxvt-unicode uim scim scim-uim scim-anthy
   ttf-dejavu ttf-inconsolata ttf-sazanami
-  vim chromium rdesktop 
+  vim chromium
 }.each do |p|
   package p 
 end
