@@ -18,9 +18,12 @@ end
   xorg-xmodmap xorg-xset xscreensaver xterm xclip
   rxvt-unicode uim scim scim-uim scim-anthy
   ttf-dejavu ttf-inconsolata ttf-sazanami
-  vim chromium
+  gvim chromium thunar
 }.each do |p|
   package p 
+end
+file "/usr/bin/gview" do
+  action :delete
 end
 # I don't know why I cannot 'package "firefox"' ?
 
@@ -37,10 +40,15 @@ link "/usr/local/bin/vi" do
   to "/usr/bin/vim"
 end
 
-# AUR:
-# uim-mozc
-# ttf-migu
-# ttf-ricty
+
+bash "Install AUR" do
+  def yaourt package
+    "pacman -Qi #{package} >/dev/null 2>&1 || yaourt -S --noconfirm #{package}"
+  end
+  code yaourt "ttf-migu"
+  code yaourt "ttf-ricty"
+end
+
 
 # Not now:
 # dropbox-cli libreoffice
